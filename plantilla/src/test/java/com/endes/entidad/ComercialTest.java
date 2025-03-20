@@ -28,4 +28,20 @@ class ComercialTest {
 	assertEquals(precioVenta, comercial.getVentas(),"El precio no se corresponde");
 	}
 	
+	@Test
+	@DisplayName("Test para la clase setVentas")
+	void testSetVentas() {
+		Exception exception = assertThrows(IllegalArgumentException.class, ()->{new Comercial("92485932L", "Alejandro", "Taladradora", 950.0 , 18 );});
+		double precioEsperado = -18.0;
+		String mensajeEsperado = "Las ventas no pueden ser negativas"+ precioEsperado;
+		assertEquals(mensajeEsperado, exception.getMessage(), "No se corresponde el mensaje");
+	}
+	
+	@Test
+	@DisplayName("Prueba para la clase calcularExtra")
+	void testCalcularExtras() {
+		double dineroEsperado = 0.10 * 100;
+		assertEquals(dineroEsperado, 100,"El dinero extra no se corresponde");
+		
+	}
 }
