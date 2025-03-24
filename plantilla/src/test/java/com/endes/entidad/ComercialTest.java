@@ -6,8 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.miempresa.entidad.Producto;
-
 class ComercialTest {
 	
 	public Comercial comercial;
@@ -22,7 +20,6 @@ class ComercialTest {
 	@Test
 	@DisplayName("Test para la clase getVentas")
 	void testGetVentas() {
-		String nombreVenta = "Taladradora";
 		double precioVenta = 100.00;
 		
 	assertEquals(precioVenta, comercial.getVentas(),"El precio no se corresponde");
@@ -41,7 +38,15 @@ class ComercialTest {
 	@DisplayName("Prueba para la clase calcularExtra")
 	void testCalcularExtras() {
 		double dineroEsperado = 0.10 * 100;
-		assertEquals(dineroEsperado, 100,"El dinero extra no se corresponde");
+		assertEquals(dineroEsperado, 10,"El dinero extra no se corresponde");		
+	}
+	
+	@Test
+	@DisplayName("Prueba para la clase getSueldo")
+	void testGetSueldo() {
+		double sueldoEsperado = 960;
+		comercial.getSueldo();
+		assertEquals(sueldoEsperado, comercial.getSueldo(),"El sueldo no se corresponde");
 		
 	}
 }

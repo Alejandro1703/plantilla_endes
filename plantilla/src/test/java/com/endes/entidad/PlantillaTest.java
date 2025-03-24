@@ -1,5 +1,6 @@
 package com.endes.entidad;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -11,11 +12,13 @@ import org.junit.jupiter.api.Test;
  */
 class PlantillaTest {
     private Plantilla plantilla;
+    public Empleado empleado;
 
     @BeforeEach
     @DisplayName("Inicialización de la plantilla de empleados")
     void setUp() {
         plantilla = new Plantilla();
+        
     }
 
     /**
@@ -37,4 +40,12 @@ class PlantillaTest {
         // Verificar el mensaje de la excepción
         assertEquals("El empleado con DNI 11111111H ya está contratado", ex.getMessage());
     }
+    
+    @Test
+    @DisplayName ("Test para la clase contratarEmpleado")
+    void testContratarEmpleado() {
+    	Empleado empleado1 = new Tecnico("87572942H", "Alejandro", "Campos", 1400.0, 1);
+    	assertEquals(empleado1, plantilla.contratarEmpleado(null),"No se corresponden los empleados");
+    }
+    
 }

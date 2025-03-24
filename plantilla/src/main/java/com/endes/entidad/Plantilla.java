@@ -24,7 +24,7 @@ public class Plantilla {
      * @throws IllegalArgumentException Si el empleado es nulo.
      */
     public void contratarEmpleado(Empleado empleado) {
-        if (empleado == null) {
+        if (empleado == null && empleado == empleado) {
             throw new IllegalArgumentException("No se puede contratar un empleado nulo");
         }
         empleados.add(empleado);
